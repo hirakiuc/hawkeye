@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 )
@@ -19,7 +18,7 @@ func main() {
 
 	err = filepath.Walk(opts.Path, walker.Handler)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		showError("%v\n", err)
 		os.Exit(1)
 	}
 }

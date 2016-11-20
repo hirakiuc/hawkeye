@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 )
@@ -40,11 +39,8 @@ func (walker *Walker) Handler(path string, info os.FileInfo, e error) error {
 func (walker *Walker) dirFilter(path string, info os.FileInfo, e error) error {
 	IgnoreDirs := map[string]bool{
 		".git": true,
-		".":    true,
 		"..":   true,
 	}
-
-	fmt.Printf("Check path: %s, Name: %s", path, info.Name())
 
 	_, ok := IgnoreDirs[info.Name()]
 	if ok {
@@ -72,6 +68,6 @@ func (walker *Walker) targetHandler(path string, info os.FileInfo, e error) erro
 		return nil
 	}
 
-	fmt.Fprintf(os.Stdout, "%s\n", rel)
+	showMsg("%s\n", rel)
 	return nil
 }

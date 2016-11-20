@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"os"
 
 	flags "github.com/jessevdk/go-flags"
@@ -15,7 +14,7 @@ type Options struct {
 func newOptions() (*Options, error) {
 	pwd, err := os.Getwd()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		showError("%v\n", err)
 		return nil, err
 	}
 
@@ -41,12 +40,12 @@ func parseArgs() (*Options, error) {
 	parser := flags.NewParser(opts, flags.PrintErrors)
 	_, err = parser.Parse()
 	if err != nil {
-		fmt.Fprint(os.Stderr, err)
+		showError("%v\n", err)
 		return nil, err
 	}
 
 	if !validatePath(opts.Path) {
-		fmt.Fprintf(os.Stderr, "Invalid Path: %s\n", opts.Path)
+		showError("Invalid Path: %s\n", opts.Path)
 		return nil, errors.New("Invalid Path")
 	}
 

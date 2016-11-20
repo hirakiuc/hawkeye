@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 
@@ -19,7 +18,7 @@ func NewIgnoreMatcher(opts *Options) (IgnoreMatcher, error) {
 func getIgnoreMatcher(path string) (gitignore.IgnoreMatcher, error) {
 	gitIgnoreFile, err := filepath.Rel(path, ".gitignore")
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		showError("%v\n", err)
 		return nil, err
 	}
 
@@ -28,7 +27,7 @@ func getIgnoreMatcher(path string) (gitignore.IgnoreMatcher, error) {
 	}
 
 	if matcher, err := gitignore.NewGitIgnore(gitIgnoreFile); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		showError("%v\n", err)
 		return nil, err
 	} else {
 		return matcher, nil
