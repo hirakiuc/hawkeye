@@ -1,5 +1,5 @@
-
 # Created by https://www.gitignore.io/api/go,vim
+/hawkeye
 
 ### Go ###
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
