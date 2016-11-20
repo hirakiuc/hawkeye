@@ -37,13 +37,7 @@ func (walker *Walker) Handler(path string, info os.FileInfo, e error) error {
 }
 
 func (walker *Walker) dirFilter(path string, info os.FileInfo, e error) error {
-	IgnoreDirs := map[string]bool{
-		".git": true,
-		"..":   true,
-	}
-
-	_, ok := IgnoreDirs[info.Name()]
-	if ok {
+	if info.Name() == ".git" {
 		return filepath.SkipDir
 	} else {
 		return nil
