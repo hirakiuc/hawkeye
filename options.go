@@ -7,6 +7,7 @@ import (
 	flags "github.com/jessevdk/go-flags"
 )
 
+// Options describe a option arguments.
 type Options struct {
 	Path string `short:"p" long:"path" description:"Target Path" default:"."`
 }

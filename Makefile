@@ -7,5 +7,9 @@ install:
 clean:
 	go clean
 
+check:
+	go vet
+	golint
+
 defaults:
 	build

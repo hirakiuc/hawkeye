@@ -7,10 +7,12 @@ import (
 	"github.com/monochromegane/go-gitignore"
 )
 
+// IgnoreMatcher is an interface to check whether the target is match or not.
 type IgnoreMatcher interface {
 	Match(path string, isDir bool) bool
 }
 
+// NewIgnoreMatcher return new Matcher instance.
 func NewIgnoreMatcher(opts *Options) (IgnoreMatcher, error) {
 	return getIgnoreMatcher(opts.Path)
 }
@@ -26,10 +28,10 @@ func getIgnoreMatcher(path string) (gitignore.IgnoreMatcher, error) {
 		return nil, nil
 	}
 
-	if matcher, err := gitignore.NewGitIgnore(gitIgnoreFile); err != nil {
+	matcher, err := gitignore.NewGitIgnore(gitIgnoreFile)
+	if err != nil {
 		showError("%v\n", err)
 		return nil, err
-	} else {
-		return matcher, nil
 	}
+	return matcher, nil
 }
