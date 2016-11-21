@@ -1,8 +1,8 @@
 hash: 2835d62f40a4c903b57d8456951a13d66419b1db50f743e714e3317709fd09f2
-updated: 2016-11-20T13:55:05.862244623+09:00
+updated: 2016-11-21T13:08:20.131671882+09:00
 imports:
 - name: github.com/jessevdk/go-flags
-  version: d6bd1ed4cdbe19f5fc9cc03da1bc440c62f743f1
+  version: f2785f5820ec967043de79c8be97edfc464ca745
 - name: github.com/monochromegane/go-gitignore
   version: 38717d0a108ca0e5af632cd6845ca77d45b50729
 testImports: []
