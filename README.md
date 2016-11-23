@@ -23,6 +23,8 @@ endfunction
 nnoremap <Leader>op :call PecoOpen()<CR>
 ```
 
+![HowToUse](https://github.com/hirakiuc/hawkeye/blob/master/screen.gif)
+
 # TODO
 
 See [Issues](https://github.com/hirakiuc/hawkeye/issues).
