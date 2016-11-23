@@ -67,6 +67,10 @@ func (walker *Walker) targetHandler(path string, info os.FileInfo, e error) erro
 		}
 	}
 
+	if rel == "." {
+		return nil
+	}
+
 	showMsg("%s\n", rel)
 	return nil
 }
