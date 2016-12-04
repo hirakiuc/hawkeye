@@ -2,6 +2,14 @@
 
 `hawkeye` is a cli tool to list file paths from the current directory with considering .gitignore file if exists.
 
+## Dependency
+
+`hawkeye` depends on [libgit2/git2go](https://github.com/libgit2/git2go) library to recognize gitignore file.
+
+So you should install `libgit2` before install `hawkeye`.
+
+NOTE: Now, I use `hawkeye` with `libgit2` v0.24.3 on MacOS. :smile:
+
 # HowToUse
 
 Just call `hawkeye` command like this.
