@@ -61,16 +61,29 @@ func (walker *Walker) targetHandler(path string, info os.FileInfo, e error) erro
 		return err
 	}
 
-	if walker.isIgnoreTarget(rel, info) {
-		if info.IsDir() {
-			return filepath.SkipDir
-		}
-	}
-
 	if rel == "." {
 		return nil
 	}
 
-	showMsg("%s\n", rel)
+	if walker.isIgnoreTarget(rel, info) {
+		if info.IsDir() {
+			return filepath.SkipDir
+		} else {
+			return nil
+		}
+	}
+
+	showMsg("%s\n", formatPath(rel, info))
 	return nil
+}
+
+func formatPath(rel string, info os.FileInfo) string {
+	const sep = string(os.PathSeparator)
+
+	result := "." + sep + rel
+	if info.IsDir() {
+		result += sep
+	}
+
+	return result
 }
