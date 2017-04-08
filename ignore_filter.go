@@ -7,6 +7,7 @@ type IgnoreMatcher interface {
 	Match(path string, isDir bool) bool
 }
 
+// Matcher is an struct which contains repository.
 type Matcher struct {
 	repo *git.Repository
 }
@@ -24,6 +25,7 @@ func NewIgnoreMatcher(opts *Options) (IgnoreMatcher, error) {
 	}, nil
 }
 
+// Match check whether the path is ignored, or not.
 func (matcher *Matcher) Match(path string, isDir bool) bool {
 	if matcher.repo == nil {
 		return false

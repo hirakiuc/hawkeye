@@ -68,9 +68,8 @@ func (walker *Walker) targetHandler(path string, info os.FileInfo, e error) erro
 	if walker.isIgnoreTarget(rel, info) {
 		if info.IsDir() {
 			return filepath.SkipDir
-		} else {
-			return nil
 		}
+		return nil
 	}
 
 	showMsg("%s\n", formatPath(rel, info))
