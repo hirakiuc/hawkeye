@@ -1,8 +1,8 @@
-hash: 2835d62f40a4c903b57d8456951a13d66419b1db50f743e714e3317709fd09f2
-updated: 2017-05-19T19:54:11.809030258+09:00
+hash: ace02f944df35ce3c867a4cf282028c61f0d654d25eef20b76ca111cd0a46f54
+updated: 2018-03-26T08:00:52.036179104+09:00
 imports:
 - name: github.com/jessevdk/go-flags
-  version: 460c7bb0abd6e927f2767cadc91aa6ef776a98b4
+  version: f88afde2fa19a30cf50ba4b05b3d13bc6bae3079
 - name: github.com/libgit2/git2go
-  version: 7cd5a4e731e982391b9274e17c7f32050d8e5b15
+  version: 1f712c6f9608f55e9756073539dec0c9a9a81bf3
 testImports: []
