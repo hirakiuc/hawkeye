@@ -33,6 +33,8 @@ nnoremap <Leader>op :call PecoOpen()<CR>
 
 ![HowToUse](https://github.com/hirakiuc/hawkeye/blob/master/screen.gif)
 
+WARN: **This config does not works on neovim**.
+
 # TODO
 
 See [Issues](https://github.com/hirakiuc/hawkeye/issues).
