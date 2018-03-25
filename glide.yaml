@@ -1,2 +1,4 @@
 package: github.com/hirakiuc/hawkeye
-import: []
+import:
+- package: github.com/libgit2/git2go
+  version: 1f712c6f9608f55e9756073539dec0c9a9a81bf3

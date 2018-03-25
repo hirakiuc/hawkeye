@@ -8,7 +8,7 @@
 
 So you should install `libgit2` before install `hawkeye`.
 
-NOTE: Now, I use `hawkeye` with `libgit2` v0.24.3 on MacOS. :smile:
+NOTE: Now, I use `hawkeye` with `libgit2` v0.26.3 on MacOS. :smile:
 
 # HowToUse
 
